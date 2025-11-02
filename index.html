@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CultureConnect</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Pacifico&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- 🌍 LANDING SECTION -->
+    <section class="landing">
+      <video class="background-video" autoplay muted loop>
+        <source
+          src="assets/videos/Green Orange Illustrative Travel to India Video.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Navbar -->
+      <header class="navbar">
+        <h1 class="logo">CultureConnect</h1>
+        <p class="nav-tagline">Experience Culture Beyond Sightseeing</p>
+        <div class="nav-buttons">
+          <!-- “Home” scrolls down -->
+          <a href="#home" class="btn" id="homeLink">Home</a>
+          <!-- ✅ Explore now opens explore.html -->
+          <a href="explore.html" class="btn" id="showexplore">Explore</a>
+        </div>
+      </header>
+    </section>
+
+    <!-- 🪔 HOME SECTION -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h2>Discover the Soul of India</h2>
+        <p>
+          From ancient monuments to vibrant festivals — explore how traditions
+          keep our culture alive and thriving.
+        </p>
+        <!-- You can also make this explore link go to explore.html if you want -->
+        <a href="explore.html" class="explore-btn">Explore Heritage</a>
+      </div>
+    </section>
+
+    <!-- 🎨 GALLERY SECTION -->
+    <section id="gallery" class="gallery">
+      <h2>India’s Living Heritage</h2>
+      <div class="gallery-container">
+        <div class="gallery-item">
+          <img src="assets/videos/festivals.avif" alt="Festival" />
+          <h3>Festivals</h3>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/videos/monument.avif" alt="Monument" />
+          <h3>Monuments</h3>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/videos/dance.avif" alt="Traditional Dance" />
+          <h3>Traditional Dance</h3>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/videos/folk art.jpg" alt="Folk Art" />
+          <h3>Folk Art</h3>
+        </div>
+      </div>
+
+      <div class="gallery-text">
+        <h1>Tourism with Culture</h1>
+        <p>
+          CultureConnect brings India’s rich heritage to your fingertips.
+          Explore iconic landmarks, hidden gems, and local traditions through
+          immersive digital experiences designed for travelers like you. Our
+          platform combines interactive guides, authentic stories, and cultural
+          insights to help you experience destinations beyond sightseeing.
+          Whether you’re discovering historic monuments, traditional festivals,
+          or local cuisines, CultureConnect enhances every journey, making your
+          travel not just a visit, but a deep connection with the culture around
+          you.
+        </p>
+      </div>
+    </section>
+
+    <!-- Script for Home button smooth scroll -->
+    <script>
+      document.querySelector("#homeLink").addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector("#home").scrollIntoView({ behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>

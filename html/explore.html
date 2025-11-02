@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CultureConnect - Explore</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="explore-page">
+    <div class="gallery2">
+      <!-- Top Right Buttons -->
+      <div class="top-right-container">
+        <button id="hiddenGemsBtn" type="button">Hidden Gems ✨</button>
+        <button id="passportBtn" type="button">Cultural Passport 🎫</button>
+      </div>
+
+      <h1>Where do you want to explore?</h1>
+      <p>
+        Every city has a story. Enter a name to uncover its culture, history,
+        and culinary delights! 🔍🏙️
+      </p>
+
+      <!-- Explore Form -->
+      <form id="exploreForm">
+        <input
+          type="text"
+          id="destinationInput"
+          placeholder="Type a place name..."
+          required
+        />
+        <button type="submit" class="explore-btn">Explore</button>
+      </form>
+
+      <div id="placeInfo" class="place-info" style="display: none"></div>
+
+      <!-- Recommendations -->
+      <form id="recommendForm">
+        <label>Enter interests (culture, food, history, adventure):</label>
+        <input
+          type="text"
+          id="interestInput"
+          placeholder="e.g., food, adventure"
+        />
+        <button type="submit">Get Recommendations</button>
+      </form>
+      <div id="recommendations" style="display: none"></div>
+
+      <!-- Add Guide & Tips Button -->
+      <button id="guideTipsBtn" class="guide-btn">Guide & Tips ✍️</button>
+
+      <!-- Guide Modal -->
+      <div id="guideModal" class="modal">
+        <div class="modal-panel">
+          <button class="modal-close" id="closeGuideModal">✕</button>
+
+          <div class="modal-steps">
+            <!-- STEP 1 -->
+            <div class="step step-1 active">
+              <h2>Share a Guide / Tip</h2>
+              <label>City / Campus <input id="tipCity" /></label>
+              <label>Title <input id="tipTitle" /></label>
+              <label>Your name (optional) <input id="tipAuthor" /></label>
+              <div class="row">
+                <button id="toStep2" class="primary">Next</button>
+                <button id="cancelStep" class="ghost">Cancel</button>
+              </div>
+            </div>
+
+            <!-- STEP 2 -->
+            <div class="step step-2">
+              <h2>Tip details & Image</h2>
+              <label
+                >Tip / Guide <textarea id="tipText" rows="5"></textarea>
+              </label>
+              <label
+                >Attach image (optional)
+                <input id="tipImage" type="file" accept="image/*"
+              /></label>
+              <div id="imgPreview" class="img-preview"></div>
+              <div class="row">
+                <button id="backToStep1" class="ghost">Back</button>
+                <button id="toStep3" class="primary">Next</button>
+              </div>
+            </div>
+
+            <!-- STEP 3 -->
+            <div class="step step-3">
+              <h2>Rate & Submit</h2>
+              <div id="ratingInput" class="rating-input">
+                <button class="star" data-value="1">☆</button>
+                <button class="star" data-value="2">☆</button>
+                <button class="star" data-value="3">☆</button>
+                <button class="star" data-value="4">☆</button>
+                <button class="star" data-value="5">☆</button>
+              </div>
+              <div class="row">
+                <button id="backToStep2" class="ghost">Back</button>
+                <button id="submitTip" class="primary">Submit Tip</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Modal -->
+      <div id="resultModal" class="result-modal">
+        <div class="result-card">
+          <h3>Thanks — Tip Submitted! 🎉</h3>
+          <p id="resultText">Your guide will appear below.</p>
+          <div class="result-actions">
+            <button id="resultClose" class="primary">Close</button>
+            <button id="resultView" class="ghost">View Gallery</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <section id="guidesSection" class="guides-section" style="display: none">
+        <h2>Community Guides & Tips</h2>
+        <div id="guidesGrid" class="guides-grid"></div>
+      </section>
+      <!-- Add User Stories Button -->
+      <button id="userStoriesBtn" class="guide-btn">User Stories 📝</button>
+
+      <!-- User Stories Modal -->
+      <div id="storiesModal" class="modal">
+        <div class="modal-panel">
+          <button class="modal-close" id="closeStoriesModal">✕</button>
+          <h2>User Stories</h2>
+          <div id="storiesGrid" class="user-stories-grid">
+            <div class="story-card">
+              <p class="story-text">
+                "I loved using the Guide & Tips! It made my campus life so much
+                easier and fun."
+              </p>
+              <div class="story-meta">
+                <span class="story-user">– Aanya S.</span>
+                <span class="story-rating">⭐ 5/5</span>
+              </div>
+            </div>
+            <div class="story-card">
+              <p class="story-text">
+                "The hidden gems section is amazing! I discovered places I never
+                knew existed."
+              </p>
+              <div class="story-meta">
+                <span class="story-user">– Rahul M.</span>
+                <span class="story-rating">⭐ 4.8/5</span>
+              </div>
+            </div>
+            <div class="story-card">
+              <p class="story-text">
+                "Smooth UI and fun colors. I keep coming back to explore more
+                tips every week."
+              </p>
+              <div class="story-meta">
+                <span class="story-user">– Priya K.</span>
+                <span class="story-rating">⭐ 5/5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="back-btn1" onclick="location.href='index.html'">
+        Back to Home
+      </button>
+    </div>
+    <script>
+      // Handle button clicks for navigation
+      document
+        .getElementById("passportBtn")
+        .addEventListener("click", function () {
+          window.location.href = "passport.html";
+        });
+
+      document
+        .getElementById("hiddenGemsBtn")
+        .addEventListener("click", function () {
+          window.location.href = "hiddengems.html";
+        });
+    </script>
+
+    <script src="exploreApi.js"></script>
+    <script src="guides.js"></script>
+  </body>
+</html>

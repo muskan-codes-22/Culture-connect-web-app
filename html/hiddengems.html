@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CultureConnect - Hidden Gems</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- A-Frame library for 360°/AR experiences -->
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  </head>
+  <body>
+    <div class="gallery2">
+      <h1>Hidden Gems & Offbeat Spots</h1>
+      <p>
+        Discover unique spots away from the usual tourist trail. Enter a city to
+        see its hidden treasures!
+      </p>
+
+      <form id="hiddenGemsForm">
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Enter city name..."
+          required
+        />
+        <button type="submit">Show Hidden Gems</button>
+      </form>
+
+      <div id="hiddenGemsDisplay" style="display: none">
+        <h3>Hidden Gems ✨</h3>
+        <ul id="hiddenGemsList"></ul>
+      </div>
+
+      <button class="back-btn" onclick="location.href='explore.html'">
+        Back to Explore
+      </button>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="quiz-modal" style="display: none">
+      <div class="quiz-content">
+        <h2>Campus Quiz</h2>
+        <form id="quizForm"></form>
+        <button id="submitQuiz" class="quiz-btn">Submit</button>
+        <button id="closeQuiz" class="quiz-btn close-btn">Close</button>
+        <p id="quizFeedback" class="quiz-feedback"></p>
+      </div>
+    </div>
+
+    <!-- 360° Viewer Section -->
+    <div
+      id="viewerContainer"
+      style="
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 60%;
+        height: 60%;
+        transform: translate(-50%, -50%);
+        background-color: #000;
+        z-index: 1000;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 2px solid rgba(255, 215, 0, 0.6);
+        box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+      "
+    >
+      <button
+        id="closeViewer"
+        style="
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          z-index: 1001;
+          padding: 10px 20px;
+          border: none;
+          background: linear-gradient(135deg, #ff8c00, #ff3e3e);
+          color: #fff;
+          border-radius: 8px;
+          cursor: pointer;
+          font-weight: 600;
+        "
+      >
+        Close
+      </button>
+
+      <a-scene embedded style="width: 100%; height: 100%">
+        <a-sky id="sky" src="" rotation="0 -130 0" radius="3"></a-sky>
+      </a-scene>
+    </div>
+
+    <script src="hidddengem.js"></script>
+  </body>
+</html>

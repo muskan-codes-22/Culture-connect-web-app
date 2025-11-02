@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CultureConnect - Cultural Passport</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="explore-page">
+    <div class="gallery2">
+  <div class="passport-container">
+    
+    <!-- LEFT SIDE -->
+    <div class="passport-left">
+      <h1>🎫 Cultural Passport</h1>
+      <p>Travel across vibrant cities, collect unique stamps, and celebrate the rich culture, traditions, and hidden gems that each destination has to offer!</p>
+      <img
+        src="assets/images/women.png"
+        alt="Girl pointing"
+        class="passport-illustration"
+      />
+    </div>
+
+       <!-- RIGHT SIDE -->
+    <div class="passport-right">
+      <h2>🎫 Cultural Passport</h2>
+      <p>Collect stamps as you explore new cities!</p>
+
+        <div class="passport-cards" id="passportCards">
+          <!-- Example stamps; JS will update unlocked status -->
+          <div class="stamp locked" data-city="Delhi">
+            <img src="assets/videos/building.png" alt="Delhi" />
+            <span>Delhi</span>
+          </div>
+          <div class="stamp locked" data-city="Jaipur">
+            <img src="assets/videos/hawa-mahal.png" alt="Jaipur" />
+            <span>Jaipur</span>
+          </div>
+          <div class="stamp locked" data-city="Kerala">
+            <img src="assets/videos/palm-tree.png" alt="Kerala" />
+            <span>Kerala</span>
+          </div>
+          <div class="stamp locked" data-city="Agra">
+            <img src="assets/images/taj-mahal.png" alt="Agra" />
+            <span>Agra</span>
+          </div>
+          <div class="stamp locked" data-city="Varanasi">
+            <img src="assets/images/temple.png" alt="Varanasi" />
+            <span>Varanasi</span>
+          </div>
+          <div class="stamp locked" data-city="Amiritsar">
+            <img src="assets/images/amritsar.png" alt="Amiritsar" />
+            <span>Amritsar</span>
+          </div>
+          <div class="stamp locked" data-city="Leh">
+            <img src="assets/images/winter.png" alt="Leh" />
+            <span>Leh</span>
+          </div>
+          <div class="stamp locked" data-city="Manali">
+            <img src="assets/images/paragliding.png" alt="Manali" />
+            <span>Manali</span>
+          </div>
+          <div class="stamp locked" data-city="shimla">
+            <img src="assets/images/train.png" alt="shimla" />
+            <span>Shimla</span>
+          </div>
+          <div class="stamp locked" data-city="Chandigarh">
+            <img src="assets/images/sculpture.png" alt="Chandigarh" />
+            <span>Chandigarh</span>
+          </div>
+          <div class="stamp locked" data-city="Bengaluru">
+            <img src="assets/images/energy.png" alt="Bengaluru" />
+            <span>Bengaluru</span>
+          </div>
+          <div class="stamp locked" data-city="Chennai">
+            <img src="assets/images/bharatanatyam.png" alt="Chennai" />
+            <span>Chennai</span>
+          </div>
+          <div class="stamp locked" data-city="Mysore">
+            <img src="assets/images/dosa.png" alt="Mysore" />
+            <span>Mysore</span>
+          </div>
+          <div class="stamp locked" data-city="Kochi">
+            <img src="assets/images/houseboat.png" alt="Kochi" />
+            <span>Kochi</span>
+          </div>
+          <div class="stamp locked" data-city="Thiruvananthapuram">
+            <img
+              src="assets/images/sravanmahotsav.png"
+              alt="Thiruvananthapuram"
+            />
+            <span>Trivandram</span>
+          </div>
+          <div class="stamp locked" data-city="Munnar">
+            <img src="assets/images/field.png" alt="Munnar" />
+            <span>Munnar</span>
+          </div>
+          <div class="stamp locked" data-city="Wayanad">
+            <img src="assets/images/elephant.png" alt="Wayanad" />
+            <span>Wayanad</span>
+          </div>
+        </div>
+        <p class="passport-points">
+          Points: <span id="passportPoints">0</span>
+        </p>
+      </div>
+
+      <!-- Back Button -->
+      <button class="back-btn" onclick="location.href='explore.html'">
+        Back to Explore
+      </button>
+    </div>
+
+    <!-- JS: Use the same Explore page JS or separate passport.js -->
+    <script src="exploreApi.js"></script>
+    <script>
+      // ================== Gamified Passport Logic ==================
+      const passportPoints = document.getElementById("passportPoints");
+      const stamps = document.querySelectorAll(".stamp");
+
+      // Initialize passport data (example, can use localStorage later)
+      let userPassport = {
+        Delhi: false,
+        Jaipur: false,
+        Kerala: false,
+        Agra: false,
+        Udaipur: false,
+      };
+
+      // Function to render passport stamps
+      function renderPassport() {
+        stamps.forEach((stamp) => {
+          const city = stamp.dataset.city;
+          if (userPassport[city]) {
+            stamp.classList.remove("locked");
+            stamp.classList.add("unlocked");
+          } else {
+            stamp.classList.remove("unlocked");
+            stamp.classList.add("locked");
+          }
+        });
+
+        const points = Object.values(userPassport).filter((v) => v).length;
+        passportPoints.textContent = points;
+      }
+
+      // Example: unlock a city on click (for demo)
+      stamps.forEach((stamp) => {
+        stamp.addEventListener("click", () => {
+          const city = stamp.dataset.city;
+          userPassport[city] = true;
+          renderPassport();
+        });
+      });
+
+      // Initial render
+      renderPassport();
+    </script>
+  </body>
+</html>
