@@ -99,6 +99,13 @@ Home page
 Passport page
 ![Passport Page Preview](assets/images/output/passport-page.png)
 
+## 🎥 Demo Video
+
+Watch how users explore and interact with the Culture Connect web app:
+
+➡️ https://youtu.be/5wt2rkyZkcI
+
+---
 
 ## 💡 Motivation
 
