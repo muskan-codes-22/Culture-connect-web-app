@@ -101,6 +101,27 @@ India is a land of unity in diversity — this project aims to help users connec
 
 ---
 
+## 🌱 What I Learned
+
+During the development of **Culture Connect**, I gained hands-on experience with core web development concepts:
+
+- 🎨 **Responsive UI Design**  
+  Learned to structure layouts using CSS Grid & Flexbox and ensure the website works smoothly on mobile, tablet, and desktop screens.
+
+- 🧠 **DOM Manipulation with JavaScript**  
+  Used JavaScript to dynamically update content, handle user interactions, and control how the data appears on the page.
+
+- 🔍 **Search & Filter Logic**  
+  Implemented a simple search mechanism that filters cultural data based on user input — improving usability and interactivity.
+
+- 🗂️ **Organizing Code Files**  
+  Maintained clean folder structure for HTML, CSS, JavaScript, and assets to make the project easy to understand and maintain.
+
+- 🚀 **Deploying a Web App**  
+  Deployed the website using **Vercel**, and learned how to host static projects and manage public project links.
+
+---
+
 ## 🧑‍💻 Author
 
 Muskan Kumari
